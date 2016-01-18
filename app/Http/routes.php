@@ -15,6 +15,12 @@
         return view('welcome');
     });
 
+    Route::get('timetostring/{id}','TimeToString@waktu');
+
+    #Route::get('/timetostring/{time}', function ($time) {
+
+#    });
+
     Route::get('/calculator/hitung/{angka}', function ($angka) {
 
         preg_match('/^[0-9\(\)\+\-\*\/(sqrt)(pow),\s+]+$/', $angka,$ok);

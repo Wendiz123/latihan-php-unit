@@ -40,12 +40,12 @@ class AlphaSortingTest extends TestCase {
         $this->assertEquals("IRadhmn", $hasil);
     }
 
-    public function testAlphaNumeric()
+    /*public function testAlphaNumeric()
     {
         $bil = new Alphasorting();
         $hasil = $bil->sorter("Imam Ramadhan123");
         $this->assertEquals("Error", $hasil);
-    }
+    }*/
 
     public function testAlphaUpperLower()
     {
@@ -54,12 +54,12 @@ class AlphaSortingTest extends TestCase {
         $this->assertEquals("AIRadhmn", $hasil);
     }
 
-    public function testSpecChar()
+    /*public function testSpecChar()
     {
         $bil = new Alphasorting();
         $hasil = $bil->sorter("Imam@! RamAdhan4$");
         $this->assertEquals("Error", $hasil);
-    }
+    }*/
 
 
 }

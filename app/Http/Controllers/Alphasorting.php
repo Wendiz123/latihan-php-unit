@@ -10,19 +10,12 @@ namespace App\Http\Controllers;
 
 
 class Alphasorting {
-    public function sorter($huruf)
+    public function sorter($string)
     {
-        $huruf = str_replace(" ","",$huruf);
-
-        if (preg_match('/^[a-zA-Z]+$/', $huruf))
-        {
-            $a = str_split($huruf);
-            $b = array_unique($a);
-            sort($b);
-
-            return implode("",$b);
+        if(preg_match('/[^a-zA-Z\s-]/i',$string)){
+            abort(404, "Inputan Salah");
         }
-        else
-            return 'Error';
+        $sortnya = count_chars($string,3);
+        return trim($sortnya);
     }
 }
