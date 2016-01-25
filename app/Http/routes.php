@@ -21,15 +21,21 @@
 
 #    });
 
-    Route::get('/calculator/hitung/{angka}', function ($angka) {
-
-        preg_match('/^[0-9\(\)\+\-\*\/(sqrt)(pow),\s+]+$/', $angka,$ok);
-        if (isset($ok[0])){
-            return @eval("return ($angka);");
-        }
-        else
-            return "ERROR";
+    Route::get('/calculator','Calculator@index');
+    Route::get('/calculator/form',function(){
+        return view('form_calculator');
     });
+    Route::post('/calculator','Calculator@index');
+
+    #Route::get('/calculator/hitung/{angka}', function ($angka) {
+
+#        preg_match('/^[0-9\(\)\+\-\*\/(sqrt)(pow),\s+]+$/', $angka,$ok);
+ #       if (isset($ok[0])){
+  #          return @eval("return ($angka);");
+   #     }
+    #    else
+     #       return "ERROR";
+   # });
 
     Route::get('/calculator/terbilang/{angka}', function ($angka) {
 
